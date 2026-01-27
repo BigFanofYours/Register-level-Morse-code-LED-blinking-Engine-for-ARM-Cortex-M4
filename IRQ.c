@@ -4,6 +4,7 @@
 extern volatile uint8_t RX_BUFFER[256];
 extern volatile uint16_t RX_IRQIndex;
 extern volatile uint8_t RX_SequenceReady;
+extern volatile uint32_t SysTickMs;
 
 void USART1_IRQHandler(void)
 {
@@ -20,4 +21,9 @@ void USART1_IRQHandler(void)
 			}
 		}
 	}
+}
+
+void SysTick_Handler(void)
+{
+	SysTickMs++;
 }

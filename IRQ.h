@@ -12,5 +12,6 @@ typedef enum
 #define USART1_RXNE 					(1UL << 5)
 
 void USART1_IRQHandler(void);
+void SysTick_Handler(void);
 
 #endif

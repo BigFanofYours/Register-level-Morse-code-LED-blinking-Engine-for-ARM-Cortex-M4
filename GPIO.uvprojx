@@ -429,6 +429,11 @@
               <FileType>1</FileType>
               <FilePath>.\IRQ.c</FilePath>
             </File>
+            <File>
+              <FileName>MORSE.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\MORSE.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -483,6 +488,11 @@
               <FileName>IRQ.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\IRQ.h</FilePath>
+            </File>
+            <File>
+              <FileName>MORSE.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\MORSE.h</FilePath>
             </File>
           </Files>
         </Group>

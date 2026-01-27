@@ -37,11 +37,25 @@ typedef struct
   volatile uint32_t PLLI2SCFGR;    /*!< RCC PLLI2S configuration register,                           Address offset: 0x84 */
 } RCC_TypeDef;
 
+typedef struct
+{
+	volatile uint32_t STK_CTRL;
+	volatile uint32_t STK_LOAD;
+	volatile uint32_t STK_VAL;
+	volatile uint32_t STK_CALIB;
+}SysTick_Typedef;
+
 /* RCC Base Address */
 #define RCC_BASE      (0x40023800UL)
 
+/* System timer Base Address */
+#define SYSTICK_BASE 	(0xE000E010UL)
+
 /* RCC Peripheral Pointer */
 #define RCC           ((RCC_TypeDef *) RCC_BASE)
+
+/* System timer Peripheral Pointer */
+#define SysTick 			((SysTick_Typedef*) SYSTICK_BASE)
 
 /* RCC AHB1 Peripheral Clock Enable Bits */
 #define RCC_AHB1ENR_GPIOAEN_Pos		(0U)
@@ -54,4 +68,5 @@ typedef struct
 /* RCC APB2 Peripheral Clock Enable Bits */
 #define RCC_APB2ENR_USART1EN_Pos	(4U)
 #define RCC_APB2ENR_USART1EN			(1UL << RCC_APB2ENR_USART1EN_Pos)	
+
 #endif

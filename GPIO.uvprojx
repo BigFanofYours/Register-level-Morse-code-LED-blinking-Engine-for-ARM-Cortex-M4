@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>Target_1</TargetName>
+      <TargetName>STM32F407VETx</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>6240000::V6.24::ARMCLANG</pCCUsed>
@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define></Define>
               <Undefine></Undefine>
-              <IncludePath></IncludePath>
+              <IncludePath>.\Delay;.\application\morse;.\arch\cortex_m4\gpio;.\arch\cortex_m4\irq;.\arch\cortex_m4\nvic;.\arch\cortex_m4\rcc;.\arch\cortex_m4\usart</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -382,22 +382,12 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Source Group 1</GroupName>
+          <GroupName>Root</GroupName>
           <Files>
-            <File>
-              <FileName>GPIO.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\GPIO.c</FilePath>
-            </File>
             <File>
               <FileName>main.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\main.c</FilePath>
-            </File>
-            <File>
-              <FileName>Delay.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Delay.c</FilePath>
             </File>
             <File>
               <FileName>system_stm32f4xx.c</FileName>
@@ -409,90 +399,130 @@
               <FileType>2</FileType>
               <FilePath>.\startup_stm32f407xx.s</FilePath>
             </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Delay</GroupName>
+          <Files>
             <File>
-              <FileName>USART.c</FileName>
+              <FileName>nt_ppd_delay.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\USART.c</FilePath>
+              <FilePath>Delay\nt_ppd_delay.c</FilePath>
             </File>
             <File>
-              <FileName>RCC.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\RCC.c</FilePath>
-            </File>
-            <File>
-              <FileName>NVIC.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\NVIC.c</FilePath>
-            </File>
-            <File>
-              <FileName>IRQ.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\IRQ.c</FilePath>
-            </File>
-            <File>
-              <FileName>MORSE.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\MORSE.c</FilePath>
+              <FileName>nt_ppd_delay.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>Delay\nt_ppd_delay.h</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>New Group</GroupName>
+          <GroupName>application\morse</GroupName>
           <Files>
             <File>
-              <FileName>RCC_Register.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\RCC_Register.h</FilePath>
+              <FileName>nt_ppd_morse.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>application\morse\nt_ppd_morse.c</FilePath>
             </File>
             <File>
-              <FileName>GPIO_Registers.h</FileName>
+              <FileName>nt_ppd_morse.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\GPIO_Registers.h</FilePath>
+              <FilePath>application\morse\nt_ppd_morse.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>arch\cortex_m4\gpio</GroupName>
+          <Files>
+            <File>
+              <FileName>nt_ppd_gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>arch\cortex_m4\gpio\nt_ppd_gpio.c</FilePath>
             </File>
             <File>
-              <FileName>GPIO.h</FileName>
+              <FileName>nt_ppd_gpio.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\GPIO.h</FilePath>
+              <FilePath>arch\cortex_m4\gpio\nt_ppd_gpio.h</FilePath>
             </File>
             <File>
-              <FileName>Delay.h</FileName>
+              <FileName>nt_ppd_gpio_registers.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Delay.h</FilePath>
+              <FilePath>arch\cortex_m4\gpio\nt_ppd_gpio_registers.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>arch\cortex_m4\irq</GroupName>
+          <Files>
+            <File>
+              <FileName>nt_ppd_irq.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>arch\cortex_m4\irq\nt_ppd_irq.c</FilePath>
             </File>
             <File>
-              <FileName>USART_Registers.h</FileName>
+              <FileName>nt_ppd_irq.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\USART_Registers.h</FilePath>
+              <FilePath>arch\cortex_m4\irq\nt_ppd_irq.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>arch\cortex_m4\nvic</GroupName>
+          <Files>
+            <File>
+              <FileName>nt_ppd_nvic.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>arch\cortex_m4\nvic\nt_ppd_nvic.c</FilePath>
             </File>
             <File>
-              <FileName>USART.h</FileName>
+              <FileName>nt_ppd_nvic.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\USART.h</FilePath>
+              <FilePath>arch\cortex_m4\nvic\nt_ppd_nvic.h</FilePath>
             </File>
             <File>
-              <FileName>RCC.h</FileName>
+              <FileName>nt_ppd_nvic_registers.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\RCC.h</FilePath>
+              <FilePath>arch\cortex_m4\nvic\nt_ppd_nvic_registers.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>arch\cortex_m4\rcc</GroupName>
+          <Files>
+            <File>
+              <FileName>nt_ppd_rcc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>arch\cortex_m4\rcc\nt_ppd_rcc.c</FilePath>
             </File>
             <File>
-              <FileName>NVIC_Registers.h</FileName>
+              <FileName>nt_ppd_rcc.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\NVIC_Registers.h</FilePath>
+              <FilePath>arch\cortex_m4\rcc\nt_ppd_rcc.h</FilePath>
             </File>
             <File>
-              <FileName>NVIC.h</FileName>
+              <FileName>nt_ppd_rcc_registers.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\NVIC.h</FilePath>
+              <FilePath>arch\cortex_m4\rcc\nt_ppd_rcc_registers.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>arch\cortex_m4\usart</GroupName>
+          <Files>
+            <File>
+              <FileName>nt_ppd_usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>arch\cortex_m4\usart\nt_ppd_usart.c</FilePath>
             </File>
             <File>
-              <FileName>IRQ.h</FileName>
+              <FileName>nt_ppd_usart.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\IRQ.h</FilePath>
+              <FilePath>arch\cortex_m4\usart\nt_ppd_usart.h</FilePath>
             </File>
             <File>
-              <FileName>MORSE.h</FileName>
+              <FileName>nt_ppd_usart_registers.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\MORSE.h</FilePath>
+              <FilePath>arch\cortex_m4\usart\nt_ppd_usart_registers.h</FilePath>
             </File>
           </Files>
         </Group>

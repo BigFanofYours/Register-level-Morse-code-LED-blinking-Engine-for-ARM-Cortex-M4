@@ -1,71 +1,32 @@
-#include "GPIO.h"
-#include "Delay.h"
-#include "RCC.h"
-#include "USART.h"
-#include "NVIC.h"
-#include "MORSE.h"
+#include "nt_ppd_gpio.h"
+#include "nt_ppd_delay.h"
+#include "nt_ppd_irq.h"
+#include "nt_ppd_usart.h"
+#include "nt_ppd_nvic.h"
+#include "nt_ppd_morse.h"
+#include "nt_ppd_rcc.h"
+#include "main.h"
 
-// Definitions
-
-// Global variables
-volatile uint8_t RX_BUFFER[256];
-const char UART_TX_OK[] = "TX OK\r\n";
-const char UART_RX_OK[] = "RX OK\r\n";
-volatile uint16_t RX_MainIndex = 0;
-volatile uint16_t RX_IRQIndex = 0;
-volatile uint8_t RX_SequenceReady = 0;
-volatile uint32_t SysTickMs;
-Morse_HandleTypedef Morse;
-
-//Function declarations
-void RX_DataProcessing(void);
-void RX_DataProcessing1(void);
+// Function declarations
+static void nt_ppd_PeripheralInit(void);
 
 int main(void)
 {
-	RCC_Init();
-	GPIO_LEDInit();
-	GPIO_USART1Init();
-	USART1_Init();
-	USART1_Enable();
-	GPIO_ResetPin();
-	GPIO_TogglePin();
-	while(1)	
+	nt_ppd_PeripheralInit();
+
+	while (1)
 	{
-		Morse_Update();
-		
-		if(RX_SequenceReady && (Morse.Morse_CharAvailable == 0))
-		{
-			NVIC_IRQDisable(USART1_IRQn);
-			char RX_Character = RX_BUFFER[RX_MainIndex++];
-			
-			if(RX_Character >= 'a' && RX_Character <= 'z')
-			{
-				RX_Character -= 32;
-			}
-			else if(RX_Character >= '0' && RX_Character <= '9')
-			{
-				RX_Character += 43;
-			}
-		
-			Morse_StartChar(RX_Character);
-			
-			if(RX_MainIndex >= RX_IRQIndex)
-			{
-				Morse.Morse_CharAvailable = 0;
-				RX_MainIndex = RX_IRQIndex = 0;
-				NVIC_IRQEnable(USART1_IRQn);
-			}
-		}
+		nt_ppd_App_Morse();
 	}
 }
 
-void RX_DataProcessing(void)
+static void nt_ppd_PeripheralInit(void)
 {
-	NVIC_IRQDisable(USART1_IRQn);
-	for(RX_MainIndex = 0; RX_MainIndex <= RX_IRQIndex; RX_MainIndex++)
-	{
-		
-	}
-	NVIC_IRQEnable(USART1_IRQn);
+	nt_ppd_RccMcal_ClockInit();
+	nt_ppd_GpioMcal_LedInit();
+	nt_ppd_GpioMcal_Usart1Init();
+	nt_ppd_UsartMcal_Usart1Init();
+	nt_ppd_UsartMcal_Usart1Enable();
+	nt_ppd_GpioMcal_ResetPin();
+	nt_ppd_GpioMcal_TogglePin();
 }

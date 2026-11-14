@@ -44,89 +44,89 @@ __Vectors       DCD     __initial_sp               ; Top of Stack
                 DCD     SysTick_Handler            ; SysTick Handler
 
                 ; External Interrupts
-                DCD     WWDG_IRQHandler            
-                DCD     PVD_IRQHandler             
-                DCD     TAMP_STAMP_IRQHandler      
-                DCD     RTC_WKUP_IRQHandler        
-                DCD     FLASH_IRQHandler           
-                DCD     RCC_IRQHandler             
-                DCD     EXTI0_IRQHandler           
-                DCD     EXTI1_IRQHandler           
-                DCD     EXTI2_IRQHandler           
-                DCD     EXTI3_IRQHandler           
-                DCD     EXTI4_IRQHandler           
-                DCD     DMA1_Stream0_IRQHandler    
-                DCD     DMA1_Stream1_IRQHandler    
-                DCD     DMA1_Stream2_IRQHandler    
-                DCD     DMA1_Stream3_IRQHandler    
-                DCD     DMA1_Stream4_IRQHandler    
-                DCD     DMA1_Stream5_IRQHandler    
-                DCD     DMA1_Stream6_IRQHandler    
-                DCD     ADC_IRQHandler             
-                DCD     CAN1_TX_IRQHandler         
-                DCD     CAN1_RX0_IRQHandler        
-                DCD     CAN1_RX1_IRQHandler        
-                DCD     CAN1_SCE_IRQHandler        
-                DCD     EXTI9_5_IRQHandler         
-                DCD     TIM1_BRK_TIM9_IRQHandler   
-                DCD     TIM1_UP_TIM10_IRQHandler   
+                DCD     WWDG_IRQHandler
+                DCD     PVD_IRQHandler
+                DCD     TAMP_STAMP_IRQHandler
+                DCD     RTC_WKUP_IRQHandler
+                DCD     FLASH_IRQHandler
+                DCD     RCC_IRQHandler
+                DCD     EXTI0_IRQHandler
+                DCD     EXTI1_IRQHandler
+                DCD     EXTI2_IRQHandler
+                DCD     EXTI3_IRQHandler
+                DCD     EXTI4_IRQHandler
+                DCD     DMA1_Stream0_IRQHandler
+                DCD     DMA1_Stream1_IRQHandler
+                DCD     DMA1_Stream2_IRQHandler
+                DCD     DMA1_Stream3_IRQHandler
+                DCD     DMA1_Stream4_IRQHandler
+                DCD     DMA1_Stream5_IRQHandler
+                DCD     DMA1_Stream6_IRQHandler
+                DCD     ADC_IRQHandler
+                DCD     CAN1_TX_IRQHandler
+                DCD     CAN1_RX0_IRQHandler
+                DCD     CAN1_RX1_IRQHandler
+                DCD     CAN1_SCE_IRQHandler
+                DCD     EXTI9_5_IRQHandler
+                DCD     TIM1_BRK_TIM9_IRQHandler
+                DCD     TIM1_UP_TIM10_IRQHandler
                 DCD     TIM1_TRG_COM_TIM11_IRQHandler
-                DCD     TIM1_CC_IRQHandler         
-                DCD     TIM2_IRQHandler            
-                DCD     TIM3_IRQHandler            
-                DCD     TIM4_IRQHandler            
-                DCD     I2C1_EV_IRQHandler         
-                DCD     I2C1_ER_IRQHandler         
-                DCD     I2C2_EV_IRQHandler         
-                DCD     I2C2_ER_IRQHandler         
-                DCD     SPI1_IRQHandler            
-                DCD     SPI2_IRQHandler            
-                DCD     USART1_IRQHandler          
-                DCD     USART2_IRQHandler          
-                DCD     USART3_IRQHandler          
-                DCD     EXTI15_10_IRQHandler       
-                DCD     RTC_Alarm_IRQHandler       
-                DCD     OTG_FS_WKUP_IRQHandler     
-                DCD     TIM8_BRK_TIM12_IRQHandler  
-                DCD     TIM8_UP_TIM13_IRQHandler   
+                DCD     TIM1_CC_IRQHandler
+                DCD     TIM2_IRQHandler
+                DCD     TIM3_IRQHandler
+                DCD     TIM4_IRQHandler
+                DCD     I2C1_EV_IRQHandler
+                DCD     I2C1_ER_IRQHandler
+                DCD     I2C2_EV_IRQHandler
+                DCD     I2C2_ER_IRQHandler
+                DCD     SPI1_IRQHandler
+                DCD     SPI2_IRQHandler
+                DCD     USART1_IRQHandler
+                DCD     USART2_IRQHandler
+                DCD     USART3_IRQHandler
+                DCD     EXTI15_10_IRQHandler
+                DCD     RTC_Alarm_IRQHandler
+                DCD     OTG_FS_WKUP_IRQHandler
+                DCD     TIM8_BRK_TIM12_IRQHandler
+                DCD     TIM8_UP_TIM13_IRQHandler
                 DCD     TIM8_TRG_COM_TIM14_IRQHandler
-                DCD     TIM8_CC_IRQHandler         
-                DCD     DMA1_Stream7_IRQHandler    
-                DCD     FSMC_IRQHandler            
-                DCD     SDIO_IRQHandler            
-                DCD     TIM5_IRQHandler            
-                DCD     SPI3_IRQHandler            
-                DCD     UART4_IRQHandler           
-                DCD     UART5_IRQHandler           
-                DCD     TIM6_DAC_IRQHandler        
-                DCD     TIM7_IRQHandler            
-                DCD     DMA2_Stream0_IRQHandler    
-                DCD     DMA2_Stream1_IRQHandler    
-                DCD     DMA2_Stream2_IRQHandler    
-                DCD     DMA2_Stream3_IRQHandler    
-                DCD     DMA2_Stream4_IRQHandler    
-                DCD     ETH_IRQHandler             
-                DCD     ETH_WKUP_IRQHandler        
-                DCD     CAN2_TX_IRQHandler         
-                DCD     CAN2_RX0_IRQHandler        
-                DCD     CAN2_RX1_IRQHandler        
-                DCD     CAN2_SCE_IRQHandler        
-                DCD     OTG_FS_IRQHandler          
-                DCD     DMA2_Stream5_IRQHandler    
-                DCD     DMA2_Stream6_IRQHandler    
-                DCD     DMA2_Stream7_IRQHandler    
-                DCD     USART6_IRQHandler          
-                DCD     I2C3_EV_IRQHandler         
-                DCD     I2C3_ER_IRQHandler         
-                DCD     OTG_HS_EP1_OUT_IRQHandler  
-                DCD     OTG_HS_EP1_IN_IRQHandler   
-                DCD     OTG_HS_WKUP_IRQHandler     
-                DCD     OTG_HS_IRQHandler          
-                DCD     DCMI_IRQHandler            
-                DCD     0                          
-                DCD     HASH_RNG_IRQHandler        
-                DCD     FPU_IRQHandler             
-                
+                DCD     TIM8_CC_IRQHandler
+                DCD     DMA1_Stream7_IRQHandler
+                DCD     FSMC_IRQHandler
+                DCD     SDIO_IRQHandler
+                DCD     TIM5_IRQHandler
+                DCD     SPI3_IRQHandler
+                DCD     UART4_IRQHandler
+                DCD     UART5_IRQHandler
+                DCD     TIM6_DAC_IRQHandler
+                DCD     TIM7_IRQHandler
+                DCD     DMA2_Stream0_IRQHandler
+                DCD     DMA2_Stream1_IRQHandler
+                DCD     DMA2_Stream2_IRQHandler
+                DCD     DMA2_Stream3_IRQHandler
+                DCD     DMA2_Stream4_IRQHandler
+                DCD     ETH_IRQHandler
+                DCD     ETH_WKUP_IRQHandler
+                DCD     CAN2_TX_IRQHandler
+                DCD     CAN2_RX0_IRQHandler
+                DCD     CAN2_RX1_IRQHandler
+                DCD     CAN2_SCE_IRQHandler
+                DCD     OTG_FS_IRQHandler
+                DCD     DMA2_Stream5_IRQHandler
+                DCD     DMA2_Stream6_IRQHandler
+                DCD     DMA2_Stream7_IRQHandler
+                DCD     USART6_IRQHandler
+                DCD     I2C3_EV_IRQHandler
+                DCD     I2C3_ER_IRQHandler
+                DCD     OTG_HS_EP1_OUT_IRQHandler
+                DCD     OTG_HS_EP1_IN_IRQHandler
+                DCD     OTG_HS_WKUP_IRQHandler
+                DCD     OTG_HS_IRQHandler
+                DCD     DCMI_IRQHandler
+                DCD     0
+                DCD     HASH_RNG_IRQHandler
+                DCD     FPU_IRQHandler
+
 __Vectors_End
 
 __Vectors_Size  EQU  __Vectors_End - __Vectors
@@ -361,16 +361,16 @@ FPU_IRQHandler
 ; User Stack and Heap initialization
 ;******************************************************************************
                  IF      :DEF:__MICROLIB
-                
+
                  EXPORT  __initial_sp
                  EXPORT  __heap_base
                  EXPORT  __heap_limit
-                
+
                  ELSE
-                
+
                  IMPORT  __use_two_region_memory
                  EXPORT  __user_initial_stackheap
-                 
+
 __user_initial_stackheap
 
                  LDR     R0, =  Heap_Mem
